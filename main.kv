@@ -1,0 +1,59 @@
+<Calculator>:
+    id: Calculator
+    inp_height: entry1
+    inp_weight: entry2
+    inp_gender: entry3
+    inp_hours: entry4
+    inp_rd: entry5
+    BoxLayout:
+        size: root.size
+        orientation: 'vertical'
+        Label:
+            font_size: '25sp'
+            text: "Alcohol Calculator"
+        Label:
+            font_size: '20sp'
+            text: "Height (in cm):"
+        DataInput:
+            id: entry1
+            on_text: Calculator.update()
+        Label:
+            font_size: '20sp'
+            text: "Weigth (in kg):"
+        DataInput:
+            id: entry2
+            on_text: Calculator.update()
+        Label:
+            font_size: '20sp'
+            text: "Gender (m/f):"
+        DataInput:
+            id: entry3
+            on_text: Calculator.update()
+        Label:
+            font_size: '20sp'
+            text: "Time since first drink (in h):"
+        DataInput:
+            id: entry4
+            on_text: Calculator.update()
+        BoxLayout:
+            Button:
+                text: "Add Drink"
+                on_press: Calculator.add_drink()
+            Button:
+                text: "Remove Drink"
+                on_press: Calculator.remove_drink()
+            Label:
+                font_size: '20sp'
+                text: str(Calculator.drinks_amount)
+        Label:
+            font_size: '20sp'
+            text: "Resorptionsdeficit (in %):"
+        DataInput:
+            id: entry5
+            on_text: Calculator.update()
+        Label:
+            font_size: '20sp'
+            text: str(Calculator.bac)
+
+<DataInput>:
+    font_size: '20sp'
